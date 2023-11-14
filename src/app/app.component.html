@@ -1,0 +1,54 @@
+
+<!-- Simple Bar Chart -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eStattik Dashboard</title>
+  <style>
+    body {
+      background-color: #333; /* Dunkelgrau als Grundfarbe */
+      color: #fff; /* Weiße Schriftfarbe für bessere Lesbarkeit */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #dashboard {
+      background-color: #2c2c2c; /* Dunkelgrau für die Dashboard-Leiste */
+      padding: 10px;
+      color: #ffa500; /* Orange Akzentfarbe für Text in der Dashboard-Leiste */
+      text-align: center;
+    }
+
+    #activity-feed {
+      float: right;
+      width: 30%; /* Breite des Aktivitätsfeeds anpassen */
+      padding: 20px;
+    }
+
+    #activity-feed h2 {
+      color: #ffa500; /* Orange Akzentfarbe für Überschrift im Aktivitätsfeed */
+    }
+
+    #activity-feed ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #activity-feed li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="dashboard">
+    <h1>eStatikk Dashboard</h1>
+    <img class="logo" src="assets/Logo_eStatikk.png">
+  </div>
+  <div id="activity-feed">
+    <h2>Feed</h2>
+    <app-streams-data></app-streams-data>
+  </div>
+</body>
+</html>
