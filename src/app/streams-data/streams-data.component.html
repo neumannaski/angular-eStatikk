@@ -1,0 +1,22 @@
+<h3>Aktuelle Top Streamer in League of Legends!</h3>
+<table id="feed-table" width="450" height="800">
+    <colgroup>
+    <col id="spalte1">
+    <col id="spalte2">
+    <col id="spalte3">
+    <col id="spalte4">
+    </colgroup>
+    <tr>
+        <th>Place</th>
+        <th>Viewercount</th>
+        <th>Name</th>
+        <th>Streamer</th>
+    </tr>
+    <tr *ngFor="let stream of streamer; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{stream.viewercount}}</td>
+        <td>{{stream.name}}</td>
+        <td><a href="https://www.twitch.tv/{{stream.name}}"><img style="height: 50px;" src={{stream.profile_image_url}}></a></td>
+        <td></td>
+    </tr>
+  </table> 

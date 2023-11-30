@@ -1,0 +1,93 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eStatikk Dashboard</title>
+  <style>
+    body {
+      background-color: #333; /* Dark gray as base color */
+      color: #e0e0e0; /* White text color for better readability */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+       nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: transparent; /* Set navigation bar to transparent */
+    }
+
+    .logo {
+      height: auto;
+      max-height: 50px;
+      width: auto;
+    }
+
+    nav a {
+      color: white; /* Adjust if needed */
+      text-decoration: none;
+      margin-left: 15px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffa500;
+    }
+
+    #activity-feed {
+      float: right;
+      width: 30%; /* Adjust width of activity feed */
+      padding: 20px;
+    }
+
+    #activity-feed h2 {
+      color: #ffa500; /* Orange accent color for heading in activity feed */
+    }
+
+    #activity-feed ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #activity-feed li {
+      margin-bottom: 10px;
+    }
+
+    #chart {
+      float: left;
+      width: 60%;
+      padding: 20px;
+    }
+
+    #chart h2 {
+      color: #ffa500;
+    }
+
+    #pie-chart {
+      float: left;
+      width: 30%;
+      margin-top: 530px;
+      padding: 20px;
+    }
+
+    #pie-chart h2 {
+      color: #ffa500;
+    }
+  </style>
+</head>
+<body>
+
+
+  <router-outlet></router-outlet>
+
+  <footer>
+    <!-- Footer content can be added here -->
+  </footer>
+</body>
+</html>

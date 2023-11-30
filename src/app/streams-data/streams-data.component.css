@@ -1,0 +1,24 @@
+#feed-table{
+    background-color: #333333;
+}
+h3 {
+    color: #ffa500;
+}
+th{
+    text-align: center;
+}
+td{
+    text-align: center;
+}
+#spalte1{
+    width: 80px;
+}
+#spalte2{
+    width: 120px;
+}
+#spalte3{
+    width: 180px;
+}
+#spalte4{
+    width: 100px;
+}

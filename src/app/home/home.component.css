@@ -1,0 +1,94 @@
+/* home.component.css */
+body {
+  background-color: #333; /* Dark gray as base color */
+  color: #e0e0e0; /* White text color for better readability */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.home-header {
+  background-image: url('/assets/header02_eStatikk.png');
+  background-size: cover; /* Cover the entire area of the header */
+  background-position: center bottom; /* Position the image centered at the bottom */
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 50px 20px; /* Adjust padding as needed */
+  position: relative;
+  min-height: 350px; /* Adjust minimum height as needed */
+}
+
+.home-header nav {
+  background-color: transparent;
+  position: absolute; /* Positioning at the bottom */
+  top: 0; /* Align to the top of the home-header */
+  left: 0; /* Align to the left side */
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px; /* Adjust as needed */
+}
+
+.home-header nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.home-header nav a:hover,
+.home-header h1:hover,
+.home-header p:hover,
+.home-header h2:hover {
+  color: #ffa500; /* Orange color on hover */
+}
+
+.logo {
+  height: auto;
+  max-height: 50px; /* Adjust as needed */
+  width: auto;
+}
+
+/* Styles for chart titles */
+#activity-feed h2, #chart h2, #pie-chart h2 {
+  color: white; /* Set text color to white */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for chart titles */
+#activity-feed h2:hover, #chart h2:hover, #pie-chart h2:hover {
+  color: #ffa500; /* Change color to orange on hover */
+}
+
+/* Styles for the chart containers */
+#activity-feed, #chart, #pie-chart {
+  transition: box-shadow 0.3s ease; /* Smooth transition for the shadow effect */
+  /* Other styles for positioning, size, etc., can be included here */
+}
+
+/* Hover effect for the charts */
+#activity-feed:hover, #chart:hover, #pie-chart:hover {
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6); /* Orange shadow with transparency */
+}
+
+#activity-feed {
+  float: right;
+  width: 30%; /* Adjust width of activity feed */
+  padding: 20px;
+}
+
+
+#chart {
+  float: left;
+  width: 60%;
+  padding: 20px;
+}
+
+
+#pie-chart {
+  float: left;
+  width: 30%;
+  margin-top: 530px; /* Adjust as needed */
+  padding: 20px;
+}
+
+
