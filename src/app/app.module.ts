@@ -14,7 +14,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { HomeComponent } from './home/home.component';
 import { FAQComponent } from './faq/faq.component';
 import { AboutComponent } from './about/about.component';
-import { KontaktComponent } from './kontakt/kontakt.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -27,8 +27,8 @@ Chart.register(...registerables);
     HomeComponent,
     FAQComponent,
     AboutComponent,
-    KontaktComponent,
-    
+    ContactComponent,
+
   ],
   imports: [
     BrowserModule,

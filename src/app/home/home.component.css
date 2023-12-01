@@ -1,7 +1,8 @@
 /* home.component.css */
+/* General body styles */
 body {
-  background-color: #333; /* Dark gray as base color */
-  color: #e0e0e0; /* White text color for better readability */
+  background-color: #333;
+  color: #e0e0e0;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -9,86 +10,113 @@ body {
 
 .home-header {
   background-image: url('/assets/header02_eStatikk.png');
-  background-size: cover; /* Cover the entire area of the header */
-  background-position: center bottom; /* Position the image centered at the bottom */
-  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   text-align: center;
-  padding: 50px 20px; /* Adjust padding as needed */
+  padding: 50px 20px;
   position: relative;
-  min-height: 350px; /* Adjust minimum height as needed */
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-header nav {
   background-color: transparent;
-  position: absolute; /* Positioning at the bottom */
-  top: 0; /* Align to the top of the home-header */
-  left: 0; /* Align to the left side */
+  position: absolute;
+  top: 0;
+  left: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px; /* Adjust as needed */
-}
-
-.home-header nav a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.home-header nav a:hover,
-.home-header h1:hover,
-.home-header p:hover,
-.home-header h2:hover {
-  color: #ffa500; /* Orange color on hover */
+  padding: 10px 20px;
 }
 
 .logo {
   height: auto;
-  max-height: 50px; /* Adjust as needed */
+  max-height: 50px;
   width: auto;
 }
 
-/* Styles for chart titles */
-#activity-feed h2, #chart h2, #pie-chart h2 {
-  color: white; /* Set text color to white */
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
+.home-header .nav-links {
+  display: flex;
+  align-items: center;
 }
 
-/* Hover effect for chart titles */
-#activity-feed h2:hover, #chart h2:hover, #pie-chart h2:hover {
-  color: #ffa500; /* Change color to orange on hover */
+.home-header .nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  transition: color 0.3s ease;
 }
 
-/* Styles for the chart containers */
+.home-header .nav-links a:hover {
+  color: #ffa500;
+}
+
+.home-header h1, .home-header p, .home-header h2 {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.home-header h1:hover, .home-header p:hover, .home-header h2:hover {
+  color: #ffa500;
+}
+
 #activity-feed, #chart, #pie-chart {
-  transition: box-shadow 0.3s ease; /* Smooth transition for the shadow effect */
-  /* Other styles for positioning, size, etc., can be included here */
+  transition: box-shadow 0.3s ease;
 }
 
-/* Hover effect for the charts */
 #activity-feed:hover, #chart:hover, #pie-chart:hover {
-  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6); /* Orange shadow with transparency */
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6);
 }
 
-#activity-feed {
-  float: right;
-  width: 30%; /* Adjust width of activity feed */
+#activity-feed, #chart, #pie-chart {
   padding: 20px;
 }
 
+/* Responsive Layout Adjustments for medium-screens */
+@media screen and (max-width: 768px) {
+    .home-header {
+    height: 300px; /* Smaller fixed height for medium screens */
+  }
+  .home-header .nav-links, #activity-feed, #chart, #pie-chart {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
 
-#chart {
-  float: left;
-  width: 60%;
-  padding: 20px;
+  .home-header nav {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    margin-bottom: 10px; /* Add space between logo and links */
+  }
+
+  #activity-feed, #chart, #pie-chart {
+    float: none;
+    margin-top: 20px;
+  }
 }
 
+/* Larger Text for Smaller Screens */
+@media screen and (max-width: 600px) {
+    .home-header {
+    height: 200px; /* Even smaller height for small screens */
+  }
+  .home-header h1 {
+    font-size: 1.5rem;
+  }
 
-#pie-chart {
-  float: left;
-  width: 30%;
-  margin-top: 530px; /* Adjust as needed */
-  padding: 20px;
+  .home-header p, .home-header h2 {
+    font-size: 1rem;
+  }
 }
-
-
+@media screen and (min-width: 1200px) {
+  .home-header {
+    height: 500px; /* Increased height for large monitors */
+  }
+  /* ... other large screen adjustments, if needed ... */
+}
