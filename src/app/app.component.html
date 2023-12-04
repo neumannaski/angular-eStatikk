@@ -1,93 +1,67 @@
-
-
+<!-- app.component.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>eStatikk Dashboard</title>
-  <style>
-    body {
-      background-color: #333; /* Dark gray as base color */
-      color: #e0e0e0; /* White text color for better readability */
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-       nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: transparent; /* Set navigation bar to transparent */
-    }
-
-    .logo {
-      height: auto;
-      max-height: 50px;
-      width: auto;
-    }
-
-    nav a {
-      color: white; /* Adjust if needed */
-      text-decoration: none;
-      margin-left: 15px;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffa500;
-    }
-
-    #activity-feed {
-      float: right;
-      width: 30%; /* Adjust width of activity feed */
-      padding: 20px;
-    }
-
-    #activity-feed h2 {
-      color: #ffa500; /* Orange accent color for heading in activity feed */
-    }
-
-    #activity-feed ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    #activity-feed li {
-      margin-bottom: 10px;
-    }
-
-    #chart {
-      float: left;
-      width: 60%;
-      padding: 20px;
-    }
-
-    #chart h2 {
-      color: #ffa500;
-    }
-
-    #pie-chart {
-      float: left;
-      width: 30%;
-      margin-top: 530px;
-      padding: 20px;
-    }
-
-    #pie-chart h2 {
-      color: #ffa500;
-    }
-  </style>
+  <!-- ... -->
+  <title> eStatikk </title>
 </head>
 <body>
 
+  <!-- Common navigation bar for all components -->
+<nav [ngClass]="{'transparent-nav': isHomePage, 'styled-nav': !isHomePage}">
+  <div class="nav-links">
+    <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a routerLink="/games" routerLinkActive="active-link">Games</a>
+    <a routerLink="/about" routerLinkActive="active-link">About</a>
+    <a routerLink="/faq" routerLinkActive="active-link">FAQ</a>
+    <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
+  </div>
+  <img ngSrc="assets/Logo_eStatikk.png" alt="eStatikk Logo" class="logo" height="207" width="424">
+</nav>
 
+  <!-- Angular router will handle displaying the correct component -->
   <router-outlet></router-outlet>
 
-  <footer>
-    <!-- Footer content can be added here -->
-  </footer>
+  <!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>About eStatikk</h4>
+      <p>eStatikk is the leading analytics platform for eSports, offering in-depth insights and data to players and fans worldwide.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/games">Games</a></li>
+        <li><a routerLink="/faq">FAQ</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact Us</h4>
+      <p>Email: contact@estatikk.com</p>
+      <p>Phone: +123 456 7890</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <!-- Replace # with actual URLs -->
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitch"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2023 eStatikk. All rights reserved.</p>
+  </div>
+</footer>
 </body>
 </html>

@@ -15,6 +15,9 @@ import { HomeComponent } from './home/home.component';
 import { FAQComponent } from './faq/faq.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import {NgOptimizedImage} from "@angular/common";
+import {GamesComponent} from "./games/games.component";
+
 
 
 
@@ -28,16 +31,18 @@ Chart.register(...registerables);
     FAQComponent,
     AboutComponent,
     ContactComponent,
+      GamesComponent
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    StreamsDataComponent,
-    HttpClientModule,
-    ChartDemoComponent,
-    PieChartComponent,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        StreamsDataComponent,
+        HttpClientModule,
+        ChartDemoComponent,
+        PieChartComponent,
+        NgOptimizedImage,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

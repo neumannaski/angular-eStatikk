@@ -1,0 +1,71 @@
+.contact-background {
+  background-image: url('/assets/FAQ_eStatikk.png'); /* Update with the correct path */
+    background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end; /* Align the contact content to the right side */
+}
+
+.contact-content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-section {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay for readability */
+  color: white;
+  max-width: 450px; /* Set a max width for the contact section */
+  margin-right: 50px; /* Add some right margin */
+  padding: 2rem;
+  border-radius: 0 8px 8px 0; /* Rounded corners on the left side */
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #555; /* Adjust the border color as needed */
+  background-color: #000; /* Dark background for input fields */
+  color: white;
+}
+
+.contact-form button {
+  background-color: #ff3e00;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e65a00;
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-background {
+    justify-content: center;
+  }
+
+  .contact-section {
+    margin-right: 0;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+}
+

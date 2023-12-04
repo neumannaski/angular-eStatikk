@@ -1,0 +1,35 @@
+.about-background {
+  background-image: url('/assets/FAQ_eStatikk.png'); /* Pfad zum Hintergrundbild aktualisieren */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 100vh; /* Mindesthöhe, um den gesamten Bildschirm abzudecken */
+  display: flex;
+  align-items: flex-start; /* Ausrichtung am oberen Rand */
+  justify-content: flex-end; /* Text rechtsbündig ausrichten */
+  padding-right: 5%; /* Rechten Abstand hinzufügen */
+}
+
+.about-content {
+ /* Halbtransparente Überlagerung für Lesbarkeit */
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 35%; /* Breite des Textcontainers */
+  max-width: 400px; /* Maximale Breite anpassen */
+  margin-top: 10vh; /* Abstand von der Oberseite des Bildschirms */
+  text-align: left; /* Text linksbündig ausrichten */
+}
+
+@media (max-width: 768px) {
+  .about-background {
+    align-items: center; /* Zentriert den Inhalt vertikal */
+    justify-content: center; /* Zentriert den Inhalt horizontal */
+    padding-right: 0; /* Entfernt den rechten Abstand */
+  }
+
+  .about-content {
+    width: 80%; /* Breite des Textcontainers anpassen */
+    margin-top: 0; /* Entfernt den oberen Abstand */
+  }
+}

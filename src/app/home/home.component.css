@@ -79,16 +79,20 @@ body {
 /* Responsive Layout Adjustments for medium-screens */
 @media screen and (max-width: 768px) {
     .home-header {
-    height: 300px; /* Smaller fixed height for medium screens */
+    height: 300px;
+      justify-content: flex-start; /* Smaller fixed height for medium screens */
   }
-  .home-header .nav-links, #activity-feed, #chart, #pie-chart {
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
+  .home-header .nav-links {
+    flex-direction: row;
+    justify-content: flex-end;
   }
 
   .home-header nav {
-    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    left: 0; /* Keeps nav at the top left */
+    right: 0; /* Stretches nav across the top */
+    flex-direction: row; /* Ensures nav items are in a row */
   }
 
   .logo {
@@ -98,6 +102,10 @@ body {
   #activity-feed, #chart, #pie-chart {
     float: none;
     margin-top: 20px;
+  }
+
+  .home-header .nav-links {
+    flex-direction: row; /* Keeps nav links in a row */
   }
 }
 

@@ -3,3 +3,62 @@ body {
     background-color: #202020;
     color: #FF8600;
 }
+/* Base styles for nav bar */
+.transparent-nav {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: transparent; /* or any other style you want */
+  position: fixed; /* Fixed position to keep the nav at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensures the nav is above other content */
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  transition: color 0.3s;
+  position: relative; /* Required for positioning the pseudo-element */
+}
+
+.nav-links a:hover,
+.nav-links a.active-link {
+  color: #ffa500; /* Orange color for active or hovered link */
+}
+
+/* Adding a line beneath the active link */
+.nav-links a.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; /* Positioning the line below the text */
+  left: 0;
+  right: 0;
+  height: 2px; /* Height of the underline */
+  background-color: #ffa500; /* Orange color */
+  transition: background-color 0.3s;
+}
+
+
+.logo {
+  order: -1;
+  height: auto;
+  max-height: 50px;
+  width: auto;
+}

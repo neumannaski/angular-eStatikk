@@ -1,0 +1,105 @@
+.faq-background {
+  background-image: url('/assets/FAQ_eStatikk.png'); /* Ensure the path is correct */
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  align-items: center; /* Vertically center the content */
+  justify-content: flex-end; /* Align the content to the right */
+  padding-right: 5%; /* Space from the right edge */
+}
+
+.faq-content {
+  max-width: 400px; /* Maximum width of the FAQ boxes, adjust as needed */
+  margin-right: 5%; /* Space from the right edge */
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+ /* Semi-transparent background for readability */
+  border-radius: 8px; /* Rounded corners for the FAQ box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  overflow-y: auto; /* Enable scrolling for overflow content */
+  height: calc(100vh - 200px); /* Adjust height to avoid footer, adjust the value based on your footer's height */
+}
+
+/* Adjust the style for the FAQ buttons */
+/* Styles for FAQ question buttons */
+.faq-question {
+  background-color: #333; /* Dark background for the button */
+  color: white; /* Text color */
+  padding: 15px 20px; /* Padding inside the buttons */
+  margin-bottom: 10px; /* Space between buttons */
+  cursor: pointer; /* Cursor to indicate it's clickable */
+  display: flex; /* Use flexbox to layout the text and icon */
+  justify-content: space-between; /* Put space between the text and icon */
+  align-items: center; /* Align items vertically */
+  border: none; /* Remove border */
+  width: 100%; /* Full width to match the parent */
+  border-radius: 4px; /* Rounded corners for aesthetics */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.faq-question:hover {
+  background-color: #ffa500; /* Slightly lighter background on hover */
+}
+
+/* Icon at the end of the question button */
+.plus-minus-icon {
+  /* Adjust the size as necessary, depending on your design */
+  font-size: 1.5rem;
+  transition: transform 0.3s ease; /* Smooth transform on rotate */
+}
+
+/* When the FAQ answer is open, rotate the plus icon to a 'minus' */
+.plus-minus-icon.open {
+  transform: rotate(45deg); /* Change to 'rotate(0)' for a minus sign */
+}
+/* Style for the FAQ answer that appears when a question is clicked */
+.faq-answer {
+  background-color: rgba(105, 105, 105, 0.8); /* Semi-transparent answers */
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+/* Ensure the footer does not overlap with the FAQ content */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Your existing footer styles */
+}
+/* Ensure FAQ boxes do not exceed the background image size */
+@media (min-width: 1200px) { /* Adjust breakpoint as necessary */
+  .faq-background {
+    justify-content: flex-end;
+  }
+  .faq-content {
+    margin-right: 10%; /* More space from the right on large screens */
+  }
+}
+
+@media (max-width: 768px) {
+@media (max-width: 768px) {
+  .faq-content {
+    /* Adjust for smaller screens if necessary */
+    max-width: 90%;
+    margin-right: 5%; /* Ensure consistent spacing from the right */
+    height: auto; /* Let the height be automatic to fit content */
+  }
+}
+
+  .faq-background {
+    padding-bottom: 60px; /* Less padding on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-content {
+    width: 95%; /* Full width for extra small screens */
+    right: 2.5%; /* Center it with equal margin on both sides */
+    transform: translateY(-50%) translateX(-2.5%); /* Adjust horizontal centering */
+  }
+}

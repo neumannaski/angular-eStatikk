@@ -1,1 +1,17 @@
-<p>faq works!</p>
+<div class="faq-background">
+  <div class="faq-content">
+    <!-- Content for FAQ will be provided by the component logic -->
+    <div class="faq-container">
+      <h2>FAQ's</h2>
+      <div class="faq" *ngFor="let faq of faqs">
+        <button class="faq-question" (click)="toggleFaq(faq)">
+          {{ faq.question }}
+          <span class="plus-minus-icon" [class.open]="faq.isOpen">+</span>
+        </button>
+        <div class="faq-answer" *ngIf="faq.isOpen">
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
