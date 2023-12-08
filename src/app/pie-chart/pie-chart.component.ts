@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChange, Input, SimpleChanges } from '@angular/core';
 import { Chart } from 'chart.js';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
@@ -12,7 +12,8 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './pie-chart.component.html',
   styleUrls: ['./pie-chart.component.css']
 })
-export class PieChartComponent implements OnInit{
+export class PieChartComponent implements OnInit, OnChanges{
+  @Input() genre: string = '';
   ctx: any;
   config: any;
   chartSpielaufteilungData: number[] = [];
@@ -23,9 +24,14 @@ export class PieChartComponent implements OnInit{
   ngOnInit() {
     this.getSpieleaufteilung();
   }
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes['genre']){
+      this.getSpieleaufteilung();
+    }
+  }
 
   getSpieleaufteilung() {
-    this.httpClient.get<any>('http://127.0.0.1:5000/get_total_viewercount_per_game/').subscribe(
+    this.httpClient.get<any>(`http://127.0.0.1:5000/get_total_viewercount_per_genre/${encodeURIComponent(this.genre)}`).subscribe(
       (   response: { viewercount: number; name: string; }[] ) => {
         console.log(response);
         this.chartSpielaufteilungData = [];
@@ -44,7 +50,7 @@ export class PieChartComponent implements OnInit{
             datasets: [{
               label: 'Anzahl der Zuschauer',
               data: this.chartSpielaufteilungData,
-              backgroundColor: ['#8f8f8f','#ff8600'],
+              backgroundColor: ['#8f8f8f','#ff8600','#5c5c5c'],
               hoverOffset: 4
             }]
           },

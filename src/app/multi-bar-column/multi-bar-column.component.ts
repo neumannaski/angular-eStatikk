@@ -11,53 +11,22 @@ export class MultiBarColumnComponent {
   ctx : any;
   config : any;
   chartDatalabels : any[] = [];
-  
-    ngOnInit(){
-  
-      this.chartDatalabels.push('11.11.');
-      this.chartDatalabels.push('12.11.');
-      this.chartDatalabels.push('13.11.');
-  
-      this.ctx = document.getElementById('myChart1');
 
-      this.config = {
-        type : 'bar',
-        data : {
-          labels : this.chartDatalabels,
-          datasets : [{ 
-            label: 'Riot Games',
-            data: [8,2,3],
-            backgroundColor:['rgb(135,201,28)']
-          },
-          { 
-            label: 'Summoners Inn',
-            data: [5,4,6],
-            backgroundColor: ['rgb(212,22,222)']
-          },
-        { 
-          label: 'Tolkin',
-          data: [8,5,9],
-          backgroundColor: ['rgb(22,216,223)']
-        }
-      ],
-        options : {
-          scales: {
-            x: {
-                grid: {
-                  offset: false
-                }
-            },
-            y: {
-              grid: {
-                offset: false
-              }
-          }
-        }
-        }
-        }
-      }
-      const myChart1 = new Chart(this.ctx, this.config);
+    ngOnInit():void{
+    //  this.getData('League of Legends');
+      //this.getData('Dota 2');
     }
-    
+   //   getData(game: string):void{
+     //   const url = `http://127.0.0.1:5000/get_viewercount_per_language_by_game/${encodeURIComponent(game)}`;
+       // this.httpClient.get<any>(url).subscribe(
+         // response=>{
+           // cons
+          //}
+        //)
 
-}
+      }
+      //const myChart1 = new Chart(this.ctx, this.config);
+ //  }
+
+
+//S}

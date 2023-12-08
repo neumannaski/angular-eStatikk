@@ -19,22 +19,24 @@ export class Streamer {
 }
 
 @Component({
-  selector: 'app-streams-data',
+  selector: 'app-br-feed-data',
   standalone: true,
   imports: [CommonModule, RouterOutlet, HttpClientModule],
-  templateUrl: './streams-data.component.html',
-  styleUrls: ['./streams-data.component.css']
+  templateUrl: './br-feed-data.component.html',
+  styleUrls: ['./br-feed-data.component.css']
 })
-export class StreamsDataComponent implements OnInit{
+export class BrFeedDataComponent implements OnInit{
 
-  lolStreamer: Streamer[] | undefined;
-  dota2Streamer: Streamer[] | undefined;
+  wzStreamer: Streamer[] | undefined;
+  fnStreamer: Streamer[] | undefined;
+  pubgStreamer: Streamer[] | undefined;
 
   constructor(private httpClient: HttpClient){
   }
   ngOnInit():void{
-    this.getData('League of Legends');
-    this.getData('Dota 2');
+    this.getData('Call of Duty: Warzone');
+    this.getData('Fortnite');
+    this.getData('PUBG: BATTLEGROUNDS')
   }
     getData(game: string): void{
       const url = `http://127.0.0.1:5000/get_current_top_streams_of_game/${encodeURIComponent(game)}`;
@@ -42,10 +44,12 @@ export class StreamsDataComponent implements OnInit{
       this.httpClient.get<any>(url).subscribe(
         response=>{
           console.log(response);
-          if (game == 'League of Legends'){
-            this.lolStreamer=response;
-          } else if (game == 'Dota 2'){
-        this.dota2Streamer=response;
+          if (game == 'Call of Duty: Warzone'){
+            this.wzStreamer=response;
+          } else if (game == 'Fortnite'){
+        this.fnStreamer=response;
+      } else if (game== 'PUBG: BATTLEGROUNDS'){
+        this.pubgStreamer=response;
       }
     });
 }

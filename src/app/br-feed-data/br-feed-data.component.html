@@ -1,6 +1,6 @@
 <div class="feed-container">
     <div>
-        <h3>Aktuelle Top Streamer in League of Legends!</h3>
+        <h3>Call of Duty: Warzone</h3>
         <table id="feed-table" width="750" height="800">
             <colgroup>
                 <col id="spalte1">
@@ -14,7 +14,7 @@
                 <th>Name</th>
                 <th>Streamer</th>
             </tr>
-            <tr *ngFor="let stream of lolStreamer; let i=index">
+            <tr *ngFor="let stream of wzStreamer; let i=index">
                 <td>{{i+1}}</td>
                 <td>{{stream.viewercount}}</td>
                 <td>{{stream.name}}</td>
@@ -25,7 +25,7 @@
         </table>
     </div>
     <div>
-    <h3>Aktuelle Top Streamer in Dota 2!</h3>
+    <h3>Fortnite</h3>
     <table id="feed-table" width="750" height="800">
         <colgroup>
             <col id="spalte1">
@@ -39,7 +39,32 @@
             <th>Name</th>
             <th>Streamer</th>
         </tr>
-        <tr *ngFor="let stream of dota2Streamer; let i=index">
+        <tr *ngFor="let stream of fnStreamer; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{stream.viewercount}}</td>
+            <td>{{stream.name}}</td>
+            <td><a href="https://www.twitch.tv/{{stream.name}}"><img style="height: 50px;"
+                        src={{stream.profile_image_url}}></a></td>
+            <td></td>
+        </tr>
+    </table>
+    </div>
+    <div>
+    <h3>PUBG: Battlegrounds</h3>
+    <table id="feed-table" width="750" height="800">
+        <colgroup>
+            <col id="spalte1">
+            <col id="spalte2">
+            <col id="spalte3">
+            <col id="spalte4">
+        </colgroup>
+        <tr>
+            <th>Place</th>
+            <th>Viewercount</th>
+            <th>Name</th>
+            <th>Streamer</th>
+        </tr>
+        <tr *ngFor="let stream of pubgStreamer; let i=index">
             <td>{{i+1}}</td>
             <td>{{stream.viewercount}}</td>
             <td>{{stream.name}}</td>

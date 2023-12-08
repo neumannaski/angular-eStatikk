@@ -35,13 +35,16 @@ td {
 .feed-container>div {
     flex: 1;
 }
-
-.feed-container>div:first-child {
+.feed-container>div{
+    margin-right: 10px; /* Anpassung der rechten Margin des ersten Containers */
+    background-color: #333333; /* Hintergrundfarbe für den ersten Container */
+}
+.feed-container>div:last-child{
     margin-right: 10px; /* Anpassung der rechten Margin des ersten Containers */
     background-color: #333333; /* Hintergrundfarbe für den ersten Container */
 }
 
-.feed-container>div:last-child {
+.feed-container>div {
     margin-left: 10px; /* Anpassung der linken Margin des zweiten Containers */
     background-color: #333333; /* Hintergrundfarbe für den zweiten Container */
 }

@@ -19,13 +19,13 @@ export class Streamer {
 }
 
 @Component({
-  selector: 'app-streams-data',
+  selector: 'app-moba-feed-data',
   standalone: true,
   imports: [CommonModule, RouterOutlet, HttpClientModule],
-  templateUrl: './streams-data.component.html',
-  styleUrls: ['./streams-data.component.css']
+  templateUrl: './moba-feed-data.component.html',
+  styleUrls: ['./moba-feed-data.component.css']
 })
-export class StreamsDataComponent implements OnInit{
+export class MobaFeedDataComponent implements OnInit{
 
   lolStreamer: Streamer[] | undefined;
   dota2Streamer: Streamer[] | undefined;

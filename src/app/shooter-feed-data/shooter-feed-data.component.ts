@@ -19,22 +19,24 @@ export class Streamer {
 }
 
 @Component({
-  selector: 'app-streams-data',
+  selector: 'app-shooter-feed-data',
   standalone: true,
   imports: [CommonModule, RouterOutlet, HttpClientModule],
-  templateUrl: './streams-data.component.html',
-  styleUrls: ['./streams-data.component.css']
+  templateUrl: './shooter-feed-data.component.html',
+  styleUrls: ['./shooter-feed-data.component.css']
 })
-export class StreamsDataComponent implements OnInit{
+export class ShooterFeedDataComponent implements OnInit{
 
-  lolStreamer: Streamer[] | undefined;
-  dota2Streamer: Streamer[] | undefined;
+  csgoStreamer: Streamer[] | undefined;
+  valoStreamer: Streamer[] | undefined;
+  ow2Streamer: Streamer[] | undefined;
 
   constructor(private httpClient: HttpClient){
   }
   ngOnInit():void{
-    this.getData('League of Legends');
-    this.getData('Dota 2');
+    this.getData('Counter-Strike');
+    this.getData('VALORANT');
+    this.getData('Overwatch 2')
   }
     getData(game: string): void{
       const url = `http://127.0.0.1:5000/get_current_top_streams_of_game/${encodeURIComponent(game)}`;
@@ -42,10 +44,12 @@ export class StreamsDataComponent implements OnInit{
       this.httpClient.get<any>(url).subscribe(
         response=>{
           console.log(response);
-          if (game == 'League of Legends'){
-            this.lolStreamer=response;
-          } else if (game == 'Dota 2'){
-        this.dota2Streamer=response;
+          if (game == 'Counter-Strike'){
+            this.csgoStreamer=response;
+          } else if (game == 'VALORANT'){
+        this.valoStreamer=response;
+      } else if (game== 'Overwatch 2'){
+        this.ow2Streamer=response;
       }
     });
 }

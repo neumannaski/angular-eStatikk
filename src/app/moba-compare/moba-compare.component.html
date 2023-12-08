@@ -1,0 +1,68 @@
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eStattik Dashboard</title>
+  <style>
+    body {
+      background-color: #333; /* Dunkelgrau als Grundfarbe */
+      color: #e0e0e0; /* Weiße Schriftfarbe für bessere Lesbarkeit */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #dashboard {
+      background-color: #1e1e1e; /* Dunkelgrau für die Dashboard-Leiste */
+      padding: 10px;
+      color: #ffa500; /* Orange Akzentfarbe für Text in der Dashboard-Leiste */
+      text-align: center;
+    }
+
+    #content-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #activity-feed,
+    #pie-chart
+    {
+      width: 50%;
+      padding: 40px;
+      background-color: #202020;
+      color: #ffa500;
+      margin: 10px;
+    }
+
+    #activity-feed h2,
+    #pie-chart h2,
+    #chart h2 {
+      color: #ffa500;
+    }
+    #chart{
+      padding:30px;
+      background-color: #202020;
+    }
+</style>
+</head>
+<body>
+  <div id="content-container">
+    <div id="activity-feed">
+      <h2>Feed - Aktuelle Top Streamer:</h2>
+      <app-moba-feed-data></app-moba-feed-data>
+    </div>
+    <div id="pie-chart">
+      <h2>Zuschauerverteilung</h2>
+      <app-pie-chart [genre]="mobaParameter"></app-pie-chart>
+    </div>
+  </div>
+  <div id="chart">
+    <h2>Zuschauerverteilung nach Sprachen</h2>
+   <app-chart-demo></app-chart-demo>
+  </div>
+</body>
+</html>
