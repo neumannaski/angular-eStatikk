@@ -6,13 +6,13 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-multi-bar-column',
+  selector: 'app-moba-sprachen',
   standalone: true,
   imports: [CommonModule, RouterOutlet, HttpClientModule],
-  templateUrl: './multi-bar-column.component.html',
-  styleUrls: ['./multi-bar-column.component.css']
+  templateUrl: './moba-sprachen.component.html',
+  styleUrls: ['./moba-sprachen.component.css']
 })
-export class MultiBarColumnComponent implements OnInit {
+export class MobaSprachenComponent implements OnInit {
 
   ctx: any;
   config: any;
@@ -31,50 +31,49 @@ export class MultiBarColumnComponent implements OnInit {
     this.ctx = document.getElementById('myChart1');
     this.config = {
       type: 'bar',
-  data: {
-    labels: this.chartDatalabels,
-    datasets: [
-      {
-        label: 'League of Legends',
-        data: this.lolData,
-        backgroundColor: ['rgb(135,201,28)'],
-      },
-      {
-        label: 'Dota 2',
-        data: this.dota2Data,
-        backgroundColor: ['rgb(22,158,64)'],
-      },
-    ],
-  },
-  options: {
-    indexAxis: 'x',
-    scales: {
-      x: {
-        title: {
-          color: '#e0e0e0',
+      data: {
+        labels: this.chartDatalabels,
+        datasets: [{
+          label: 'League of Legends',
+          data: this.lolData,
+          backgroundColor: ['rgb(225,134,0)']
         },
-        ticks: {
-          color: '#e0e0e0',
-        },
+        {
+          label: 'Dota 2',
+          data: this.dota2Data,
+          backgroundColor: ['rgb(143,143,143)']
+        },],
       },
-      y: {
-        title: {
-          color: '#e0e0e0',
+      options: {
+        indexAxis: 'y',
+        scales: {
+          x: {
+            title: {
+              color: '#e0e0e0',
+            },
+            ticks: {
+              color: '#e0e0e0'
+            }
+          },
+          y: {
+            title: {
+              color: '#e0e0e0'
+            },
+            ticks: {
+              color: '#e0e0e0'
+            }
+          },
         },
-        ticks: {
-          color: '#e0e0e0',
-        },
+        plugins: {
+          legend: {
+            labels: {
+              color: '#e0e0e0'
+            },
+          },
+        }
       },
-    },
-    plugins: {
-      legend: {
-        labels: {
-          color: '#e0e0e0',
-        },
-      },
-    },
-  },
-};
+
+    };
     const myChart1 = new Chart(this.ctx, this.config);
   }
 

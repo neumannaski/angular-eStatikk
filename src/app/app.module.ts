@@ -23,6 +23,9 @@ import {MobaCompareComponent} from './moba-compare/moba-compare.component';
 import {MobaFeedDataComponent} from './moba-feed-data/moba-feed-data.component';
 import {ShooterCompareComponent} from './shooter-compare/shooter-compare.component';
 import {ShooterFeedDataComponent} from './shooter-feed-data/shooter-feed-data.component';
+import { BrSprachenComponent } from './br-sprachen/br-sprachen.component';
+import { MobaSprachenComponent } from './moba-sprachen/moba-sprachen.component';
+import { ShooterSprachenComponent } from './shooter-sprachen/shooter-sprachen.component';
 
 
 Chart.register(...registerables);
@@ -30,7 +33,7 @@ Chart.register(...registerables);
 @NgModule({
   declarations: [
     AppComponent,
-    MultiBarColumnComponent,
+    //MultiBarColumnComponent,
     HomeComponent,
     FAQComponent,
     AboutComponent,
@@ -40,6 +43,11 @@ Chart.register(...registerables);
 
     MobaCompareComponent,
 
+    ShooterCompareComponent,
+     AppComponent,
+    HomeComponent,
+    MobaCompareComponent,
+    BrCompareComponent,
     ShooterCompareComponent,
 
 
@@ -55,6 +63,9 @@ Chart.register(...registerables);
     MobaFeedDataComponent,
     PieChartComponent,
     NgOptimizedImage,
+    BrSprachenComponent,
+    MobaSprachenComponent,
+    ShooterSprachenComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
