@@ -3,16 +3,6 @@ import {HttpClient} from "@angular/common/http";
 import {Chart} from "chart.js";
 
 
-export class Streamer {
-  constructor(
-    public startdate: Date,
-    public enddate: Date,
-    public name: string,
-    public participants: number
-  ) {
-  }
-}
-
 @Component({
   selector: 'app-lp-tournament',
   templateUrl: './lp-tournament.component.html',

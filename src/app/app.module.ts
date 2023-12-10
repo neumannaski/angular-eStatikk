@@ -17,18 +17,18 @@ import {AboutComponent} from './about/about.component';
 import {ContactComponent} from './contact/contact.component';
 import {NgOptimizedImage} from "@angular/common";
 import {GamesComponent} from "./games/games.component";
-import {BrCompareComponent} from './br-compare/br-compare.component';
-import {BrFeedDataComponent} from './br-feed-data/br-feed-data.component';
-import {MobaCompareComponent} from './moba-compare/moba-compare.component';
-import {MobaFeedDataComponent} from './moba-feed-data/moba-feed-data.component';
-import {ShooterCompareComponent} from './shooter-compare/shooter-compare.component';
-import {ShooterFeedDataComponent} from './shooter-feed-data/shooter-feed-data.component';
-import { BrSprachenComponent } from './br-sprachen/br-sprachen.component';
-import { MobaSprachenComponent } from './moba-sprachen/moba-sprachen.component';
-import { ShooterSprachenComponent } from './shooter-sprachen/shooter-sprachen.component';
-import { LpTournamentComponent } from './lp-tournament/lp-tournament.component';
-import { LpTeamComponent } from './lp-team/lp-team.component';
-import { LpPlayerComponent } from './lp-player/lp-player.component';
+import {BrCompareComponent} from './br/br-compare/br-compare.component';
+import {BrFeedDataComponent} from './br/br-feed-data/br-feed-data.component';
+import {MobaCompareComponent} from './moba/moba-compare/moba-compare.component';
+import {MobaFeedDataComponent} from './moba/moba-feed-data/moba-feed-data.component';
+import {ShooterCompareComponent} from './shooter/shooter-compare/shooter-compare.component';
+import {ShooterFeedDataComponent} from './shooter/shooter-feed-data/shooter-feed-data.component';
+import {BrSprachenComponent} from './br/br-sprachen/br-sprachen.component';
+import {MobaSprachenComponent} from './moba/moba-sprachen/moba-sprachen.component';
+import {ShooterSprachenComponent} from './shooter/shooter-sprachen/shooter-sprachen.component';
+import {LpTournamentComponent} from './lp/lp-tournament/lp-tournament.component';
+import {LpTeamComponent} from './lp/lp-team/lp-team.component';
+import {LpPlayerComponent} from './lp/lp-player/lp-player.component';
 
 
 Chart.register(...registerables);
@@ -47,7 +47,7 @@ Chart.register(...registerables);
     MobaCompareComponent,
 
     ShooterCompareComponent,
-     AppComponent,
+    AppComponent,
     HomeComponent,
     MobaCompareComponent,
     BrCompareComponent,
