@@ -27,7 +27,6 @@ export class BrSprachenComponent implements OnInit {
     this.getData('Call of Duty: Warzone');
     this.getData('Fortnite');
     this.getData('PUBG: BATTLEGROUNDS');
-
   }
 
   createChart(): void {

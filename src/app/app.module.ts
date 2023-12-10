@@ -26,6 +26,9 @@ import {ShooterFeedDataComponent} from './shooter-feed-data/shooter-feed-data.co
 import { BrSprachenComponent } from './br-sprachen/br-sprachen.component';
 import { MobaSprachenComponent } from './moba-sprachen/moba-sprachen.component';
 import { ShooterSprachenComponent } from './shooter-sprachen/shooter-sprachen.component';
+import { LpTournamentComponent } from './lp-tournament/lp-tournament.component';
+import { LpTeamComponent } from './lp-team/lp-team.component';
+import { LpPlayerComponent } from './lp-player/lp-player.component';
 
 
 Chart.register(...registerables);
@@ -49,6 +52,9 @@ Chart.register(...registerables);
     MobaCompareComponent,
     BrCompareComponent,
     ShooterCompareComponent,
+    LpTournamentComponent,
+    LpTeamComponent,
+    LpPlayerComponent,
 
 
   ],
