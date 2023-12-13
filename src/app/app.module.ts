@@ -29,6 +29,7 @@ import {ShooterSprachenComponent} from './shooter/shooter-sprachen/shooter-sprac
 import {LpTournamentComponent} from './lp/lp-tournament/lp-tournament.component';
 import {LpTeamComponent} from './lp/lp-team/lp-team.component';
 import {LpPlayerComponent} from './lp/lp-player/lp-player.component';
+import { LocalstorageComponent } from './app/lp/localstorage/localstorage.component';
 
 
 Chart.register(...registerables);
@@ -43,9 +44,7 @@ Chart.register(...registerables);
     ContactComponent,
     GamesComponent,
     BrCompareComponent,
-
     MobaCompareComponent,
-
     ShooterCompareComponent,
     AppComponent,
     HomeComponent,
@@ -55,6 +54,7 @@ Chart.register(...registerables);
     LpTournamentComponent,
     LpTeamComponent,
     LpPlayerComponent,
+    LocalstorageComponent,
 
 
   ],

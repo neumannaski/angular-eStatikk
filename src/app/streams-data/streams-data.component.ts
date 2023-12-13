@@ -45,8 +45,16 @@ export class StreamsDataComponent implements OnInit{
           if (game == 'League of Legends'){
             this.lolStreamer=response;
           } else if (game == 'Dota 2'){
-        this.dota2Streamer=response;
-      }
+            this.dota2Streamer=response;
+          } else if (game == 'Dota 2'){
+            this.dota2Streamer=response;
+          } else if (game == 'Dota 2'){
+            this.dota2Streamer=response;
+          }else if (game == 'Dota 2'){
+            this.dota2Streamer=response;
+          }else if (game == 'Dota 2'){
+            this.dota2Streamer=response;
+          }
     });
 }
 }
