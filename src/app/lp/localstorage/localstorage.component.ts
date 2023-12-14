@@ -17,7 +17,6 @@ export class LocalstorageComponent {
     }
   }
   
-  
   getItem(key: string): any {
     const item = localStorage.getItem(key);
     return item ? JSON.parse(item) : null;
@@ -28,10 +27,6 @@ export class LocalstorageComponent {
 
   setGames (value: any): void {
     this.selectedgames = value;
-  }
-
-  removeItem(key: string): void {
-    localStorage.removeItem(key);
   }
 
   getgamecolor(game_name:string):string{

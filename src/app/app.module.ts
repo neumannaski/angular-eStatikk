@@ -27,8 +27,6 @@ import {BrSprachenComponent} from './br/br-sprachen/br-sprachen.component';
 import {MobaSprachenComponent} from './moba/moba-sprachen/moba-sprachen.component';
 import {ShooterSprachenComponent} from './shooter/shooter-sprachen/shooter-sprachen.component';
 import {LpTournamentComponent} from './lp/lp-tournament/lp-tournament.component';
-import {LpTeamComponent} from './lp/lp-team/lp-team.component';
-import {LpPlayerComponent} from './lp/lp-player/lp-player.component';
 import { LocalstorageComponent } from './app/lp/localstorage/localstorage.component';
 import { AvgtwitchdataComponent } from './lp/avgtwitchdata/avgtwitchdata.component';
 
@@ -53,8 +51,6 @@ Chart.register(...registerables);
     BrCompareComponent,
     ShooterCompareComponent,
     LpTournamentComponent,
-    LpTeamComponent,
-    LpPlayerComponent,
     LocalstorageComponent,
     AvgtwitchdataComponent,
 

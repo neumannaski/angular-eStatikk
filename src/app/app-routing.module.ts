@@ -9,8 +9,6 @@ import {MobaCompareComponent} from './moba/moba-compare/moba-compare.component';
 import {ShooterCompareComponent} from './shooter/shooter-compare/shooter-compare.component';
 import {BrCompareComponent} from './br/br-compare/br-compare.component';
 import {LpTournamentComponent} from "./lp/lp-tournament/lp-tournament.component";
-import {LpTeamComponent} from "./lp/lp-team/lp-team.component";
-import {LpPlayerComponent} from "./lp/lp-player/lp-player.component";
 
 
 const routes: Routes = [
@@ -23,8 +21,6 @@ const routes: Routes = [
   {path: 'shooter', component: ShooterCompareComponent},
   {path: 'br', component: BrCompareComponent},
   {path: 'tournaments', component: LpTournamentComponent},
-  {path: 'teams', component: LpTeamComponent},
-  {path: 'player', component: LpPlayerComponent},
 ];
 
 @NgModule({

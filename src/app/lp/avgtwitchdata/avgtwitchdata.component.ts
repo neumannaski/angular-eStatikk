@@ -11,7 +11,7 @@ import { LocalstorageComponent } from '../localstorage/localstorage.component';
 })
 export class AvgtwitchdataComponent {
 
-  days: number=100
+  days: number=14
   chartData: any[] = []
   chartDataLabels: any[] = []
   chartDataIcons: any[] = []
