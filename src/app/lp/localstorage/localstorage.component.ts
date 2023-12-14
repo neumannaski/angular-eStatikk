@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class LocalstorageComponent {
-  selectedgames: any [] = [{name:"Dota 2", img:"assets\\source\\icons\\dota_2.png", selected:true}, {name:"League of Legends", img:"assets\\source\\icons\\League_of_Legends.png", selected:true}, {name:"Overwatch 2", img:"assets\\source\\icons\\Overwatch_2_logo.png", selected:false}, {name:"Counter Strike 2", img:"assets\\source\\icons\\CSGO Counter Strike New.png", selected:false}, {name:"PUBG", img:"assets\\source\\icons\\pngimg.com - pubg_PNG58.png", selected:false}, {name:"Valorant", img:"assets\\source\\icons\\games-valorant.512x512.png", selected:false}] 
+  selectedgames: any [] = [{name:"Dota 2", img:"assets\\source\\icons\\dota_2.png", selected:true,  color:"rgb(255,92,92)"}, {name:"League of Legends", img:"assets\\source\\icons\\League_of_Legends.png", selected:true, color:"rgb(92,92,255)"}, {name:"Overwatch 2", img:"assets\\source\\icons\\Overwatch_2_logo.png", selected:false, color:"rgb(92,92,255)"}, {name:"Counter-Strike", img:"assets\\source\\icons\\CSGO Counter Strike New.png", selected:false, color:"rgb(92,92,255)"}, {name:"PUBG", img:"assets\\source\\icons\\pngimg.com - pubg_PNG58.png", selected:false, color:"rgb(92,92,255)"}, {name:"Valorant", img:"assets\\source\\icons\\games-valorant.512x512.png", selected:false, color:"rgb(92,92,255)"}] 
   regions: any [] = [{name:"Europe",img:"assets\\source\\icons\\Europe-PNG.png"},{name:"North America",img:"assets\\source\\icons\\pngfind.com-america-map-png-6398713.png"},{name:"Korea",img:"assets\\source\\icons\\SeekPng.com_korea-png_2123678.png"}]  
   
   getimageofregion(key:string):any{
@@ -34,13 +34,22 @@ export class LocalstorageComponent {
     localStorage.removeItem(key);
   }
 
+  getgamecolor(game_name:string):string{
+    for (const game of this.selectedgames) {
+      if (game_name == game.name) {
+        return game.color;
+      }
+    }
+    return '';
+  }
+
   getimageofgame(gamen: string):string{
     for (const game of this.selectedgames) {
       if (gamen == game.name) {
         return game.img;
       }
     }
-    return '';
+    return 'rgb(255,255,255)';
   }
 
   getteamcolor(teamname:string):string{

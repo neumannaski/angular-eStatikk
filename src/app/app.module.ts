@@ -30,6 +30,7 @@ import {LpTournamentComponent} from './lp/lp-tournament/lp-tournament.component'
 import {LpTeamComponent} from './lp/lp-team/lp-team.component';
 import {LpPlayerComponent} from './lp/lp-player/lp-player.component';
 import { LocalstorageComponent } from './app/lp/localstorage/localstorage.component';
+import { AvgtwitchdataComponent } from './lp/avgtwitchdata/avgtwitchdata.component';
 
 
 Chart.register(...registerables);
@@ -55,6 +56,7 @@ Chart.register(...registerables);
     LpTeamComponent,
     LpPlayerComponent,
     LocalstorageComponent,
+    AvgtwitchdataComponent,
 
 
   ],

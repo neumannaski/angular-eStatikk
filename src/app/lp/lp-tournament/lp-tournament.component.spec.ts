@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { AvgtwitchdataComponent } from '../avgtwitchdata/avgtwitchdata.component';
 import { LpTournamentComponent } from './lp-tournament.component';
 
 describe('LpTournamentComponent', () => {

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import { AvgtwitchdataComponent } from '../avgtwitchdata/avgtwitchdata.component';
 import { ActivatedRoute, Router } from '@angular/router'
 import {Chart} from "chart.js";
 import { LocalstorageComponent } from '../localstorage/localstorage.component';
@@ -12,6 +13,7 @@ import { LocalstorageComponent } from '../localstorage/localstorage.component';
   templateUrl: './lp-tournament.component.html',
   styleUrls: ['./lp-tournament.component.css']
 })
+
 
 export class LpTournamentComponent implements OnInit {
   chartData: number[] = []
@@ -83,8 +85,10 @@ export class LpTournamentComponent implements OnInit {
     this.httpClient.get<any>(url2).subscribe(
       response => {
         for (const res of response) {
-          this.team_wholedata.push({name:res.name, earnings:res.earnings,region:res.region,img:this.localStorageService.getimageofregion(res.region),img_game:this.localStorageService.getimageofgame(res.game_name)})
-        }
+          if(this.checkforgame(res.game_name)){
+            this.team_wholedata.push({name:res.name, earnings:res.earnings,region:res.region,img:this.localStorageService.getimageofregion(res.region),img_game:this.localStorageService.getimageofgame(res.game_name)})
+          }
+          }
       });
   }
 
@@ -221,8 +225,11 @@ export class LpTournamentComponent implements OnInit {
     this.httpClient.get<any>(url).subscribe(
       response => {
         for (const res of response) {
-          gamedata.push(res.prizepool)
-          gamelabel.push(res.game_name)
+          if(this.checkforgame(res.game_name)){
+            gamedata.push(res.prizepool)
+            gamelabel.push(res.game_name)
+          }
+          
         }
         this.ctx = document.getElementById('tournamentpie');
         this.config = {
@@ -315,10 +322,13 @@ export class LpTournamentComponent implements OnInit {
     this.httpClient.get<any>(url).subscribe(
       response => {
         for (const res of response) {
-          teamlabel.push(res.name);
-          teamdata.push(res.earnings);
-          teamcolor.push(this.localStorageService.getteamcolor(res.name));
           console.log(res)
+          if(this.checkforgame(res.game_name)){
+            teamlabel.push(res.name);
+            teamdata.push(res.earnings);
+            teamcolor.push(this.localStorageService.getteamcolor(res.name));
+            console.log(res)
+          }
         }
         this.ctx = document.getElementById('topteams');
         this.config = {
@@ -356,9 +366,11 @@ export class LpTournamentComponent implements OnInit {
     this.httpClient.get<any>(url).subscribe(
       response => {
         for (const res of response) {
-          teamdata.push(res.earnings)
-          teamlabel.push(res.name)
-          teamcolor.push(this.localStorageService.getteamcolor(res.name))
+          if(this.checkforgame(res.game_name)){
+            teamdata.push(res.earnings)
+            teamlabel.push(res.name)
+            teamcolor.push(this.localStorageService.getteamcolor(res.name))
+          }
         }
         this.ctx = document.getElementById('europeteampie');
         this.config = {
@@ -394,9 +406,11 @@ export class LpTournamentComponent implements OnInit {
     this.httpClient.get<any>(url).subscribe(
       response => {
         for (const res of response) {
-          teamdata.push(res.earnings)
-          teamlabel.push(res.name)
-          teamcolor.push(this.localStorageService.getteamcolor(res.name))
+          if(this.checkforgame(res.game_name)){
+            teamdata.push(res.earnings)
+            teamlabel.push(res.name)
+            teamcolor.push(this.localStorageService.getteamcolor(res.name))
+          }
         }
         this.ctx = document.getElementById('northamericapie');
         this.config = {
@@ -432,9 +446,11 @@ export class LpTournamentComponent implements OnInit {
     this.httpClient.get<any>(url).subscribe(
       response => {
         for (const res of response) {
-          teamdata.push(res.earnings)
-          teamlabel.push(res.name)
-          teamcolor.push(this.localStorageService.getteamcolor(res.name))
+          if(this.checkforgame(res.game_name)){
+            teamdata.push(res.earnings)
+            teamlabel.push(res.name)
+            teamcolor.push(this.localStorageService.getteamcolor(res.name))
+          }
         }
         this.ctx = document.getElementById('Koreapie');
         this.config = {
