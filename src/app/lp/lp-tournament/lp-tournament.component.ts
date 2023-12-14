@@ -18,7 +18,8 @@ export class LpTournamentComponent implements OnInit {
   chartDataLabels: any[] = []
   chartDataIcons: any[] = []
   tabledata: any[] = []
-  tabletimedata: any[] = []
+  tournament_tabletimedata: any[] = []
+  team_wholedata: any[] = []
   selectedgames: any[] = []
   ctx: any
   config: any
@@ -36,7 +37,6 @@ export class LpTournamentComponent implements OnInit {
         this.resetpage()
       }
     }
-    console.log(name, ischecked)
   }
 
   checkforgame(gamename:string): Boolean{
@@ -45,7 +45,6 @@ export class LpTournamentComponent implements OnInit {
         return true
       }
     }
-    console.log(this.selectedgames)
     return false
   }
 
@@ -55,7 +54,10 @@ export class LpTournamentComponent implements OnInit {
     await this.getTournamentprizepool();
     await this.getTournamentline();
     await this.getTournament();
-    
+    this.getTeamsEurope();
+    this.getTeamsNorthamerica();
+    this.getTeamsKorea();
+    this.getalltopTeams();
   }
 
   getData(): void {
@@ -64,7 +66,7 @@ export class LpTournamentComponent implements OnInit {
       response => {
         for (const res of response) {
             if(this.checkforgame(res.game_name)){
-              this.tabledata.push(res)
+              this.tabledata.push({prizepool:res.prizepool,name:res.name,game_name:res.game_name,img:this.localStorageService.getimageofgame(res.game_name)})
             }
         }
       });
@@ -73,8 +75,15 @@ export class LpTournamentComponent implements OnInit {
       response => {
         for (const res of response) {
             if(this.checkforgame(res.game_name)){
-              this.tabletimedata.push(res)
+              this.tournament_tabletimedata.push({prizepool:res.prizepool,name:res.name,game_name:res.game_name,img:this.localStorageService.getimageofgame(res.game_name),startdate:res.startdate,enddate:res.enddate})
             }
+        }
+      });
+      const url2 = `http://127.0.0.1:5000/get_lp_team_data`;
+    this.httpClient.get<any>(url2).subscribe(
+      response => {
+        for (const res of response) {
+          this.team_wholedata.push({name:res.name, earnings:res.earnings,region:res.region,img:this.localStorageService.getimageofregion(res.region),img_game:this.localStorageService.getimageofgame(res.game_name)})
         }
       });
   }
@@ -84,7 +93,7 @@ export class LpTournamentComponent implements OnInit {
     const url = `http://127.0.0.1:5000/get_lp_tournament_data_startdate`;
     this.httpClient.get<any>(url).subscribe(
       response => {
-        for (const res of this.tabletimedata) {
+        for (const res of this.tournament_tabletimedata) {
           gamelabel.push(res.startdate)
         }
         
@@ -139,7 +148,7 @@ export class LpTournamentComponent implements OnInit {
       var gamecolor: string='';
       for (const game of this.selectedgames) {
       var gamedata: any[]=[];
-        for (const tabledataset of this.tabletimedata) {
+        for (const tabledataset of this.tournament_tabletimedata) {
           if(tabledataset.game_name==game.name){
             gamedata.push(tabledataset.prizepool);
               if(game.name=='Dota 2'){
@@ -152,7 +161,6 @@ export class LpTournamentComponent implements OnInit {
           }
         }
         if(this.checkforgame(game.name)){
-          console.log(game.name)
           gamedatasets.push({
           label: game.name, 
           data: gamedata,
@@ -241,7 +249,6 @@ export class LpTournamentComponent implements OnInit {
         const tournamentpie = new Chart(this.ctx, this.config);
         
       });
-
   }
 
   getTournament(): void {
@@ -299,16 +306,162 @@ export class LpTournamentComponent implements OnInit {
       });
 
   }
-  reloadComponent(self:boolean,urlToNavigateTo ?:string){
-    //skipLocationChange:true means dont update the url to / when navigating
-   console.log("Current route I am on:",this.router.url);
-   const url=self ? this.router.url :urlToNavigateTo;
-   this.router.navigateByUrl('/',{skipLocationChange:true}).then(()=>{
-     this.router.navigate([`/${url}`]).then(()=>{
-       console.log(`After navigation I am on:${this.router.url}`)
-     })
-   })
- }
+
+  getalltopTeams(): void {
+    const url = `http://127.0.0.1:5000/get_top_teams_data`;
+    var teamdata: any[]=[];
+    var teamlabel: any[]=[];
+    var teamcolor: any[]=[];
+    this.httpClient.get<any>(url).subscribe(
+      response => {
+        for (const res of response) {
+          teamlabel.push(res.name);
+          teamdata.push(res.earnings);
+          teamcolor.push(this.localStorageService.getteamcolor(res.name));
+          console.log(res)
+        }
+        this.ctx = document.getElementById('topteams');
+        this.config = {
+          type: 'bar',
+          data: {
+            labels: teamlabel,
+            datasets: [{
+              label: 'Total earnings',
+              data: teamdata,
+              backgroundColor: teamcolor,
+              borderColor: teamcolor,
+              hoverOffset: 4
+            }]
+          },
+          options:{
+            plugins: {
+              legend:{
+                labels: {
+                  color: '#e0e0e0'
+                }
+              }
+            }
+          }
+        };
+        const topteams = new Chart(this.ctx, this.config);
+        
+      });
+  }
+
+  getTeamsEurope(): void {
+    const url = `http://127.0.0.1:5000/get_team_data_by_region/Europe`;
+    var teamdata: any[]=[];
+    var teamlabel: any[]=[];
+    var teamcolor: any[]=[];
+    this.httpClient.get<any>(url).subscribe(
+      response => {
+        for (const res of response) {
+          teamdata.push(res.earnings)
+          teamlabel.push(res.name)
+          teamcolor.push(this.localStorageService.getteamcolor(res.name))
+        }
+        this.ctx = document.getElementById('europeteampie');
+        this.config = {
+          type: 'pie',
+          data: {
+            labels: teamlabel,
+            datasets: [{
+              label: 'Total earnings',
+              data: teamdata,
+              backgroundColor: teamcolor,
+              hoverOffset: 4
+            }]
+          },
+          options:{
+            plugins: {
+              legend:{
+                labels: {
+                  color: '#e0e0e0'
+                }
+              }
+            }
+          }
+        };
+        const europeteampie = new Chart(this.ctx, this.config);
+        
+      });
+  }
+  getTeamsNorthamerica(): void {
+    const url = `http://127.0.0.1:5000/get_team_data_by_region/North America`;
+    var teamdata: any[]=[];
+    var teamlabel: any[]=[];
+    var teamcolor: any[]=[];
+    this.httpClient.get<any>(url).subscribe(
+      response => {
+        for (const res of response) {
+          teamdata.push(res.earnings)
+          teamlabel.push(res.name)
+          teamcolor.push(this.localStorageService.getteamcolor(res.name))
+        }
+        this.ctx = document.getElementById('northamericapie');
+        this.config = {
+          type: 'doughnut',
+          data: {
+            labels: teamlabel,
+            datasets: [{
+              label: 'Total earnings',
+              data: teamdata,
+              backgroundColor: teamcolor,
+              hoverOffset: 4
+            }]
+          },
+          options:{
+            plugins: {
+              legend:{
+                labels: {
+                  color: '#e0e0e0'
+                }
+              }
+            }
+          }
+        };
+        const northamericapie = new Chart(this.ctx, this.config);
+        
+      });
+  }
+  getTeamsKorea(): void {
+    const url = `http://127.0.0.1:5000/get_team_data_by_region/Korea`;
+    var teamdata: any[]=[];
+    var teamlabel: any[]=[];
+    var teamcolor: any[]=[];
+    this.httpClient.get<any>(url).subscribe(
+      response => {
+        for (const res of response) {
+          teamdata.push(res.earnings)
+          teamlabel.push(res.name)
+          teamcolor.push(this.localStorageService.getteamcolor(res.name))
+        }
+        this.ctx = document.getElementById('Koreapie');
+        this.config = {
+          type: 'doughnut',
+          data: {
+            labels: teamlabel,
+            datasets: [{
+              label: 'Total earnings',
+              data: teamdata,
+              backgroundColor: teamcolor,
+              hoverOffset: 4
+            }]
+          },
+          options:{
+            plugins: {
+              legend:{
+                labels: {
+                  color: '#e0e0e0'
+                }
+              }
+            }
+          }
+        };
+        const Koreapie = new Chart(this.ctx, this.config);
+        
+      });
+  }
  resetpage(){
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.router.onSameUrlNavigation ='reload';

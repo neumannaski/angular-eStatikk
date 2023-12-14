@@ -24,13 +24,12 @@ export class LpTeamComponent {
     this.httpClient.get<any>(url).subscribe(
       response => {
         for (const res of response) {
-          console.log(res)
           this.chartData.push(res.earnings)
           this.chartDataLabels.push(res.name)
         }
         this.ctx = document.getElementById('myChart');
         this.config = {
-          type: 'bar',
+          type: 'dougnut',
           data: {
             labels: this.chartDataLabels,
             datasets: [{
@@ -75,4 +74,6 @@ export class LpTeamComponent {
       });
 
   }
+
+  
 }
