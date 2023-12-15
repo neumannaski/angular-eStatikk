@@ -1,14 +1,15 @@
-<h3> Tournament</h3>
+<h3 style="color:#ff3e00"> Tournament</h3>
 <div class="card">
   <div class="container">
     <br/>
-    <nav class="navbar navbar-light" style="background-color: #333333;">
-      <div class="container" style="background-color: #333333;">
+    <nav class="navbar navbar-light " style="background-color: #202020;">
+      <div class="container justify-content-md-center" style="background-color: #202020;">
         <table>
           <tr>
             <td *ngFor="let n of selectedgames">
               <img src={{n.img}} style="height: 40px; width: 40px; margin-left:10px;">
-              <input class="form-check-input" type="checkbox" style="margin-left:20px;" [value]="n.name" [checked]="n.selected" (change)=onchangegame($event)>
+              <input class="form-check-input" type="checkbox" style="margin-left:20px;" [value]="n.name"
+                     [checked]="n.selected" (change)=onchangegame($event)>
             </td>
           </tr>
         </table>
@@ -17,7 +18,7 @@
     <table class="table table-dark">
       <tr>
         <td style="padding-bottom:100px; padding-right:100px;padding-left:10px;">
-              
+
         </td>
       </tr>
       <tr>
@@ -26,65 +27,65 @@
             <div>
               <h3>Recent Top Tournaments</h3>
               <table id="feed-table" width="650" height="600">
-                  <colgroup>
-                      <col id="spalte1">
-                      <col id="spalte2">
-                      <col id="spalte3">
-                      <col id="spalte4">
-                  </colgroup>
-                  <tr>
-                      <th>Place</th>
-                      <th>Tournament</th>
-                      <th>Prizepool in $</th>
-                      <th>Game</th>
-                  </tr>
-                  <tr *ngFor="let stream of tabledata; let i=index">
-                      <td>{{i+1}}</td>
-                      <td>{{stream.name}}</td>
-                      <td>{{stream.prizepool}}</td>
-                      <td><img style="height: 50px; width: 50px;"
-                        src={{stream.img}}></td>
-                  </tr>
+                <colgroup>
+                  <col id="spalte1">
+                  <col id="spalte2">
+                  <col id="spalte3">
+                  <col id="spalte4">
+                </colgroup>
+                <tr>
+                  <th>Place</th>
+                  <th>Tournament</th>
+                  <th>Prizepool in $</th>
+                  <th>Game</th>
+                </tr>
+                <tr *ngFor="let stream of tabledata; let i=index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ stream.name }}</td>
+                  <td>{{ stream.prizepool }}</td>
+                  <td><img style="height: 50px; width: 50px;"
+                           src={{stream.img}}></td>
+                </tr>
               </table>
             </div>
-            <div >
+            <div>
               <canvas id="myChart" width="550" height="275"></canvas>
             </div>
             <br/>
-            <div >
+            <div>
               <canvas id="tournamentpie" width="550" height="550"></canvas>
             </div>
           </div>
         </td>
-        <td >
-          <div >
+        <td>
+          <div>
             <h3> History of the latest top Tournaments</h3>
             <table id="feed-table" width="850" height="600">
-                <colgroup>
-                    <col id="spalte1">
-                    <col id="spalte2">
-                    <col id="spalte3">
-                    <col id="spalte4">
-                </colgroup>
-                <tr>
-                    <th>Startdate</th>
-                    <th>Tournament</th>
-                    <th>Prizepool in $</th>
-                    <th>Game</th>
-                    <th>Enddate</th>
-                </tr>
-                <tr *ngFor="let stream of tournament_tabletimedata; let i=index">
-                    <td>{{stream.startdate}}</td>
-                    <td>{{stream.name}}</td>
-                    <td>{{stream.prizepool}}</td>
-                    <td><img style="height: 50px; width: 50px;"
-                      src={{stream.img}}></td>
-                    <td>{{stream.enddate}}</td>
-                </tr>
+              <colgroup>
+                <col id="spalte1">
+                <col id="spalte2">
+                <col id="spalte3">
+                <col id="spalte4">
+              </colgroup>
+              <tr>
+                <th>Startdate</th>
+                <th>Tournament</th>
+                <th>Prizepool in $</th>
+                <th>Game</th>
+                <th>Enddate</th>
+              </tr>
+              <tr *ngFor="let stream of tournament_tabletimedata; let i=index">
+                <td>{{ stream.startdate }}</td>
+                <td>{{ stream.name }}</td>
+                <td>{{ stream.prizepool }}</td>
+                <td><img style="height: 50px; width: 50px;"
+                         src={{stream.img}}></td>
+                <td>{{ stream.enddate }}</td>
+              </tr>
             </table>
           </div>
           <div>
-            <div >
+            <div>
               <canvas id="linechart_tournament" width="550" height="550"></canvas>
             </div>
           </div>
@@ -104,7 +105,8 @@
           <tr>
             <td *ngFor="let n of selectedgames">
               <img src={{n.img}} style="height: 40px; width: 40px; margin-left:10px;">
-              <input class="form-check-input" type="checkbox" style="margin-left:20px;" [value]="n.name" [checked]="n.selected" (change)=onchangegame($event)>
+              <input class="form-check-input" type="checkbox" style="margin-left:20px;" [value]="n.name"
+                     [checked]="n.selected" (change)=onchangegame($event)>
             </td>
           </tr>
         </table>
@@ -119,26 +121,26 @@
           <div>
             <h3>Top Earing Teams</h3>
             <table id="feed-table" width="850" height="600" style="padding-bottom:400px;">
-                <colgroup>
-                    <col id="spalte1">
-                    <col id="spalte2">
-                    <col id="spalte3">
-                    <col id="spalte4">
-                </colgroup>
-                <tr>
-                    <th>Name</th>
-                    <th>Total earnings $</th>
-                    <th>Region</th>
-                    <th>Game</th>
-                </tr>
-                <tr *ngFor="let stream of team_wholedata; let i=index">
-                    <td>{{stream.name}}</td>
-                    <td>{{stream.earnings}}</td>
-                    <td><img style="height: 50px; width: 50px;"
-                      src={{stream.img}}></td>
-                    <td><img style="height: 50px; width: 50px;"
-                        src={{stream.img_game}}></td>
-                </tr>
+              <colgroup>
+                <col id="spalte1">
+                <col id="spalte2">
+                <col id="spalte3">
+                <col id="spalte4">
+              </colgroup>
+              <tr>
+                <th>Name</th>
+                <th>Total earnings $</th>
+                <th>Region</th>
+                <th>Game</th>
+              </tr>
+              <tr *ngFor="let stream of team_wholedata; let i=index">
+                <td>{{ stream.name }}</td>
+                <td>{{ stream.earnings }}</td>
+                <td><img style="height: 50px; width: 50px;"
+                         src={{stream.img}}></td>
+                <td><img style="height: 50px; width: 50px;"
+                         src={{stream.img_game}}></td>
+              </tr>
             </table>
           </div>
         </td>
@@ -148,21 +150,21 @@
       <tr>
         <td>
           <h3>Europe</h3>
-          <div style="width: 500px; height: 500px;" >
+          <div style="width: 500px; height: 500px;">
             <canvas id="europeteampie" width="350" height="350"></canvas>
           </div>
           <h3>North America</h3>
-          <div style="width: 500px; height: 500px;" >
+          <div style="width: 500px; height: 500px;">
             <canvas id="northamericapie" width="350" height="350"></canvas>
           </div>
         </td>
         <td>
           <h3>Korea</h3>
-          <div style="width: 500px; height: 500px;" >
+          <div style="width: 500px; height: 500px;">
             <canvas id="Koreapie" width="350" height="350"></canvas>
           </div>
           <h3>Top Teams</h3>
-          <div style="width: 500px; height: 500px;" >
+          <div style="width: 500px; height: 500px;">
             <canvas id="topteams" width="350" height="350"></canvas>
           </div>
         </td>

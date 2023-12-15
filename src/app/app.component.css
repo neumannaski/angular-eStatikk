@@ -15,3 +15,7 @@ a {
 a:hover {
   background-color: #cc3200; /* A darker shade of orange for hover effect */
 }
+
+#container {
+  margin-bottom: 0;
+}

@@ -15,11 +15,7 @@
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  background-color: #dab993;
-  padding-left: 10px;
-  width: 90%;
+  background-color: #202020;
 }
 
 table{
@@ -35,7 +31,7 @@ table{
 }
 
 .navbar{
-  background-color: #333333;
+  background-color: #202020;
 }
 
 .example-margin {
