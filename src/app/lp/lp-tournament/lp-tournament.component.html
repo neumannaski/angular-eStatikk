@@ -64,11 +64,11 @@
                 <col id="spalte4">
               </colgroup>
               <tr>
-                <th>Startdate</th>
-                <th>Tournament</th>
-                <th>Prizepool in $</th>
-                <th>Game</th>
-                <th>Enddate</th>
+                <th class="lineborder">Startdate</th>
+                <th class="lineborder">Tournament</th>
+                <th class="lineborder">Prizepool in $</th>
+                <th class="lineborder">Game</th>
+                <th class="lineborder">Enddate</th>
               </tr>
               <tr *ngFor="let stream of tournament_tabletimedata; let i=index">
                 <td class="lineborder">{{ stream.startdate }}</td>
@@ -124,10 +124,10 @@
                 <col id="spalte4">
               </colgroup>
               <tr>
-                <th>Name</th>
-                <th>Total earnings $</th>
-                <th>Region</th>
-                <th>Game</th>
+                <th class="lineborder">Name</th>
+                <th class="lineborder">Total earnings $</th>
+                <th class="lineborder">Region</th>
+                <th class="lineborder">Game</th>
               </tr>
               <tr *ngFor="let stream of team_wholedata; let i=index">
                 <td class="lineborder">{{ stream.name }}</td>
