@@ -1,48 +1,38 @@
-<nav>
-  <div class="container-fluid">
-    <div class="row flex-nowrap">
-      <div class="fixed-left col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-        <nav class="fixed-left">
-          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 ">
-          <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <span class="fs-5 d-none d-sm-inline">eStatikk</span>
-          </a>
-          <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-            <li class="nav-item">
-              <a href="games" class="nav-link align-middle px-0">
-                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Games</span>
-              </a>
-            </li>
-            <li>
-              <a href="moba" class="nav-link px-0 align-middle">
-                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Twitch</span> </a>
-            </li>
-            <li>
-              <a href="tournaments" class="nav-link px-0 align-middle">
-                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Liquipedia</span>
-              </a>
-            </li>
-            <li>
-              <a href="faq" class="nav-link px-0 align-middle">
-                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">FAQ</span>
-              </a>
-            </li>
-            <li>
-              <a href="contact" class="nav-link px-0 align-middle">
-                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Contact</span> </a>
-            </li>
-          </ul>
-          <hr>
-        </div>
-        </nav>
-      </div>
-      <div class="col py-3">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-  </div>
-</nav>
-<!-- Angular router will handle displaying the correct component -->
+<body>
+<div style="padding-left: 10%; padding-right: 10%;">
+  <div id="main" class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark gray-900 rounded">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10"
+              aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">𝕖𝕊𝕥𝕒𝕥𝕚𝕜𝕜<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/games">Games</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/twitch">Twitch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tournaments">eSports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/faq">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div style="margin-top: 50px">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<!-- Angular router will handle displaying the correct component -->
+</body>
 
 

@@ -9,6 +9,7 @@ import {MobaCompareComponent} from './moba/moba-compare/moba-compare.component';
 import {ShooterCompareComponent} from './shooter/shooter-compare/shooter-compare.component';
 import {BrCompareComponent} from './br/br-compare/br-compare.component';
 import {LpTournamentComponent} from "./lp/lp-tournament/lp-tournament.component";
+import {TwitchComponent} from "./twitch/twitch.component";
 
 
 const routes: Routes = [
@@ -17,10 +18,11 @@ const routes: Routes = [
   {path: 'faq', component: FAQComponent},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'moba', component: MobaCompareComponent},
-  {path: 'shooter', component: ShooterCompareComponent},
-  {path: 'br', component: BrCompareComponent},
+  {path: 'twitch/moba', component: MobaCompareComponent},
+  {path: 'twitch/shooter', component: ShooterCompareComponent},
+  {path: 'twitch/br', component: BrCompareComponent},
   {path: 'tournaments', component: LpTournamentComponent},
+  {path: 'twitch', component: TwitchComponent}
 ];
 
 @NgModule({

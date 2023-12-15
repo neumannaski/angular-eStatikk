@@ -28,7 +28,7 @@ export class MobaSprachenComponent implements OnInit {
   }
 
   createChart(): void {
-    this.ctx = document.getElementById('myChart1');
+    this.ctx = document.getElementById('moba-chart');
     this.config = {
       type: 'bar',
       data: {
