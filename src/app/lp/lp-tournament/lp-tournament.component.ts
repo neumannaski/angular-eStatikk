@@ -36,7 +36,7 @@ export class LpTournamentComponent implements OnInit {
       if (game.name == name) {
         game.selected = ischecked
         this.localStorageService.setGames(this.selectedgames);
-        this.resetpage()
+        this.resetpage();
       }
     }
   }
@@ -145,7 +145,7 @@ export class LpTournamentComponent implements OnInit {
         };
         const linechart_tournament = new Chart(this.ctx, this.config);
       });
-    }
+  }
 
   gettournamenttimedataset(): any {
       var gamedatasets: any[]=[];
@@ -176,7 +176,7 @@ export class LpTournamentComponent implements OnInit {
         }
       }
       return gamedatasets
-    }
+  }
 
   gettournamentdataset(): any {
     var index: number = 0;
