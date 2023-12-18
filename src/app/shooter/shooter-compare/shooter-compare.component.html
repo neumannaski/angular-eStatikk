@@ -28,11 +28,19 @@
       justify-content: space-between;
     }
 
-    #activity-feed,
+    #activity-feed
+    {
+      width:70%;
+      padding: 20px;
+      background-color: #202020;
+      color: #d3d3d3;
+      margin: 10px;
+    }
+
     #pie-chart
     {
-      width: 80%;
-      padding: 40px;
+      width:500px;
+      padding: 10px;
       background-color: #202020;
       color: #d3d3d3;
       margin: 10px;
@@ -79,7 +87,7 @@
       <h2>Feed - Aktuelle Top Streamer:</h2>
       <app-shooter-feed-data></app-shooter-feed-data>
     </div>
-    <div id="pie-chart">
+    <div id="pie-chart" >
       <h2>Zuschauerverteilung</h2>
       <app-pie-chart [genre]="shooterParameter"></app-pie-chart>
     </div>
