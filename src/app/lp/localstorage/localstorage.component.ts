@@ -1,35 +1,68 @@
-
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 
 @Injectable({
   providedIn: 'root',
 })
 export class LocalstorageComponent {
-  selectedgames: any [] = [{name:"Dota 2", img:"assets\\source\\icons\\dota_2.png", selected:true,  color:"rgb(255,92,92)"}, {name:"League of Legends", img:"assets\\source\\icons\\League_of_Legends.png", selected:true, color:"rgb(92,92,255)"}, {name:"Overwatch 2", img:"assets\\source\\icons\\Overwatch_2_logo.png", selected:false, color:"rgb(92,92,255)"}, {name:"Counter-Strike", img:"assets\\source\\icons\\CSGO Counter Strike New.png", selected:false, color:"rgb(92,92,255)"}, {name:"PUBG", img:"assets\\source\\icons\\pngimg.com - pubg_PNG58.png", selected:false, color:"rgb(92,92,255)"}, {name:"Valorant", img:"assets\\source\\icons\\games-valorant.512x512.png", selected:false, color:"rgb(92,92,255)"}] 
-  regions: any [] = [{name:"Europe",img:"assets\\source\\icons\\Europe-PNG.png"},{name:"North America",img:"assets\\source\\icons\\pngfind.com-america-map-png-6398713.png"},{name:"Korea",img:"assets\\source\\icons\\SeekPng.com_korea-png_2123678.png"}]  
-  
-  getimageofregion(key:string):any{
+  selectedgames: any [] = [{
+    name: "Dota 2",
+    img: "assets\\source\\icons\\icons8-dota-48.png",
+    selected: true,
+    color: "rgb(255,92,92)"
+  }, {
+    name: "League of Legends",
+    img: "assets\\source\\icons\\icons8-league-of-legends-48.png",
+    selected: true,
+    color: "rgb(92,92,255)"
+  }, {
+    name: "Overwatch 2",
+    img: "assets\\source\\icons\\icons8-overwatch-48.png",
+    selected: false,
+    color: "rgb(92,92,255)"
+  }, {
+    name: "Counter-Strike",
+    img: "assets\\source\\icons\\icons8-gegenschlag-48.png",
+    selected: false,
+    color: "rgb(92,92,255)"
+  }, {
+    name: "PUBG",
+    img: "assets\\source\\icons\\icons8-pubg-48.png",
+    selected: false,
+    color: "rgb(92,92,255)"
+  }, {
+    name: "Valorant",
+    img: "assets\\source\\icons\\icons8-bewertend-48.png",
+    selected: false,
+    color: "rgb(92,92,255)"
+  }]
+  regions: any [] = [{name: "Europe", img: "assets\\source\\icons\\Europe-PNG.png"}, {
+    name: "North America",
+    img: "assets\\source\\icons\\pngfind.com-america-map-png-6398713.png"
+  }, {name: "Korea", img: "assets\\source\\icons\\SeekPng.com_korea-png_2123678.png"}]
+
+  getimageofregion(key: string): any {
     for (const region of this.regions) {
       if (key == region.name) {
         return region.img;
       }
     }
   }
-  
+
   getItem(key: string): any {
     const item = localStorage.getItem(key);
     return item ? JSON.parse(item) : null;
   }
-  getGames():any[]{
+
+  getGames(): any[] {
     return this.selectedgames;
   }
 
-  setGames (value: any): void {
+  setGames(value: any): void {
     this.selectedgames = value;
   }
 
-  getgamecolor(game_name:string):string{
+  getgamecolor(game_name: string): string {
     for (const game of this.selectedgames) {
       if (game_name == game.name) {
         return game.color;
@@ -38,7 +71,7 @@ export class LocalstorageComponent {
     return '';
   }
 
-  getimageofgame(gamen: string):string{
+  getimageofgame(gamen: string): string {
     for (const game of this.selectedgames) {
       if (gamen == game.name) {
         return game.img;
@@ -47,8 +80,8 @@ export class LocalstorageComponent {
     return 'rgb(255,255,255)';
   }
 
-  getteamcolor(teamname:string):string{
-    switch(teamname){
+  getteamcolor(teamname: string): string {
+    switch (teamname) {
       case 'Fnatic':
         return 'orange';
       case 'G2 Esports':
@@ -70,17 +103,17 @@ export class LocalstorageComponent {
       case 'SK Gaming':
         return 'gray';
       case '100 Thieves':
-          return 'red';
+        return 'red';
       case 'Cloud9':
-          return 'lightblue';
+        return 'lightblue';
       case 'Dignitas':
-          return 'yellow';
+        return 'yellow';
       case 'FlyQuest':
-          return 'green';
+        return 'green';
       case 'Immortals':
-          return 'pink';
+        return 'pink';
       case 'NRG':
-          return 'black';
+        return 'black';
       case 'BRION':
         return 'darlgreen';
       case 'Dplus':
@@ -90,17 +123,17 @@ export class LocalstorageComponent {
       case 'Freecs':
         return 'red';
       case 'Gen.G Esports':
-          return 'gold';
+        return 'gold';
       case 'Hanwha Life Esports':
-          return 'orange';
+        return 'orange';
       case 'KT Rolster':
-          return 'darkred';
+        return 'darkred';
       case 'Nongshim RedForce':
-          return 'red';
+        return 'red';
       case 'SANDBOX Gaming':
-          return 'yellow';
+        return 'yellow';
       case 'T1':
-          return 'red';
+        return 'red';
     }
     return 'rgb(255,92,92)';
   }

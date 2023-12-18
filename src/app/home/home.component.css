@@ -1,130 +1,158 @@
-/* home.component.css */
-/* General body styles */
+
 body {
-  background-color: #333;
+  background-color: #121212;
   color: #e0e0e0;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-.home-header {
-  background-image: url('/assets/source/icons/DALLE_2023-12-12_10.34.11_-_A_revised_version_of_the_wide-format_digital_artwork_for_a_website_header_with_a_darker_theme._It_features_a_variety_of_fictional_game_characters_eng.png');
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  padding: 50px 20px;
-  position: relative;
-  height: 400px;
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.row {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  margin-right: -1rem;
+  margin-left: -1rem;
 }
 
-.home-header nav {
-  background-color: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
+.col-md-4 {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
 }
 
-.logo {
-  height: auto;
-  max-height: 50px;
-  width: auto;
+.card {
+  background: #222;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
 }
 
-.home-header .nav-links {
-  display: flex;
-  align-items: center;
+.card:hover {
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Transparent orange shadow */
 }
 
-.home-header .nav-links a {
+.card-img-top {
+  width: 100%; /* ensures the image is as wide as its container */
+  height: 200px; /* fixed height for all images */
+  object-fit: cover; /* ensures the image covers the area without stretching */
+  border-top-left-radius: 10px; /* rounded corners */
+  border-top-right-radius: 10px; /* rounded corners */
+}
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #aaa;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.card-footer {
+  padding: 1rem;
+  background: none;
+}
+
+.btn {
+  background-color: #ff3e00;
   color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
   text-decoration: none;
-  margin-left: 15px;
-  transition: color 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.home-header .nav-links a:hover {
-  color: #ffa500;
+.btn:hover {
+  background-color: #cc3200; /* A darker shade of orange for hover effect */
 }
 
-.home-header h1, .home-header p, .home-header h2 {
-  color: white;
-  transition: color 0.3s ease;
-}
-
-.home-header h1:hover, .home-header p:hover, .home-header h2:hover {
-  color: #ffa500;
-}
-
-#activity-feed, #chart, #pie-chart {
-  transition: box-shadow 0.3s ease;
-}
-
-#activity-feed:hover, #chart:hover, #pie-chart:hover {
-  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6);
-}
-
-#activity-feed, #chart, #pie-chart {
-  padding: 20px;
-}
-
-/* Responsive Layout Adjustments for medium-screens */
-@media screen and (max-width: 768px) {
-    .home-header {
-    height: 300px;
-      justify-content: flex-start; /* Smaller fixed height for medium screens */
-  }
-  .home-header .nav-links {
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-
-  .home-header nav {
-    position: absolute;
-    top: 0;
-    left: 0; /* Keeps nav at the top left */
-    right: 0; /* Stretches nav across the top */
-    flex-direction: row; /* Ensures nav items are in a row */
-  }
-
-  .logo {
-    margin-bottom: 10px; /* Add space between logo and links */
-  }
-
-  #activity-feed, #chart, #pie-chart {
-    float: none;
-    margin-top: 20px;
-  }
-
-  .home-header .nav-links {
-    flex-direction: row; /* Keeps nav links in a row */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 }
 
-/* Larger Text for Smaller Screens */
-@media screen and (max-width: 600px) {
-    .home-header {
-    height: 200px; /* Even smaller height for small screens */
-  }
-  .home-header h1 {
-    font-size: 1.5rem;
-  }
-
-  .home-header p, .home-header h2 {
-    font-size: 1rem;
+@media (max-width: 576px) {
+  .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
-@media screen and (min-width: 1200px) {
-  .home-header {
-    height: 500px; /* Increased height for large monitors */
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #aaa;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.card-footer {
+  padding: 1rem;
+  background: none;
+}
+
+
+.btn:hover {
+  background-color: #cc3200; /* A darker shade of orange for hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
   }
-  /* ... other large screen adjustments, if needed ... */
+}
+
+@media (max-width: 576px) {
+  .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+a {
+  color:#ff3e00;
+}
+
+a:hover {
+  background-color: #cc3200; /* A darker shade of orange for hover effect */
 }

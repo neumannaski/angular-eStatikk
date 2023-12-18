@@ -1,13 +1,11 @@
 
-
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>eStattik Dashboard</title>
   <style>
     body {
-      background-color: #333; /* Dunkelgrau als Grundfarbe */
+      background-color: #191919; /* Dunkelgrau als Grundfarbe */
       color: #e0e0e0; /* Weiße Schriftfarbe für bessere Lesbarkeit */
       font-family: Arial, sans-serif;
       margin: 0;
@@ -19,7 +17,7 @@
     #dashboard {
       background-color: #1e1e1e; /* Dunkelgrau für die Dashboard-Leiste */
       padding: 10px;
-      color: #ffa500; /* Orange Akzentfarbe für Text in der Dashboard-Leiste */
+      color: #d3d3d3; /* Orange Akzentfarbe für Text in der Dashboard-Leiste */
       text-align: center;
     }
 
@@ -29,40 +27,64 @@
     }
 
     #activity-feed,
-    #pie-chart
-    {
+    #pie-chart {
       width: 50%;
       padding: 40px;
       background-color: #202020;
-      color: #ffa500;
+      color: #d3d3d3;
       margin: 10px;
     }
 
     #activity-feed h2,
     #pie-chart h2,
     #chart h2 {
-      color: #ffa500;
+      color: #d3d3d3;
     }
-    #chart{
-      padding:30px;
+
+    #chart {
+      padding: 30px;
       background-color: #202020;
     }
-</style>
+  </style>
 </head>
 <body>
-  <div id="content-container">
-    <div id="activity-feed">
-      <h2>Feed - Aktuelle Top Streamer:</h2>
-      <app-moba-feed-data></app-moba-feed-data>
+<div id="main">
+  <nav class="navbar navbar-expand-lg navbar-dark gray-900 rounded">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10"
+            aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-md-start" id="gamegenre">
+      <ul class="navbar-nav">
+        <li class="nav-item active ">
+          <a class="nav-link" href="/twitch/moba" style="color:#ff3e00;">Moba</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/twitch/shooter" style="color:#ff3e00;" >Shooter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/twitch/br" style="color:#ff3e00;">Battle Royale</a>
+        </li>
+
+      </ul>
     </div>
-    <div id="pie-chart">
-      <h2>Zuschauerverteilung</h2>
-      <app-pie-chart [genre]="mobaParameter"></app-pie-chart>
-    </div>
+
+  </nav>
+</div>
+<div id="content-container">
+  <div id="activity-feed">
+    <h2>Feed - Aktuelle Top Streamer:</h2>
+    <app-moba-feed-data></app-moba-feed-data>
   </div>
-  <div id="chart">
-    <h2>Zuschauerverteilung nach Sprachen</h2>
-   <app-moba-sprachen></app-moba-sprachen>
+  <div id="pie-chart">
+    <h2>Zuschauerverteilung</h2>
+    <app-pie-chart [genre]="mobaParameter"></app-pie-chart>
   </div>
+</div>
+<div id="chart">
+  <h2>Zuschauerverteilung nach Sprachen</h2>
+  <app-moba-sprachen></app-moba-sprachen>
+</div>
 </body>
-</html>
+

@@ -4,46 +4,55 @@
   font-size: x-large;
 }
 
-#europeteampie,#northamericapie,#Koreapie,#topteams {
+#europeteampie, #northamericapie, #Koreapie, #topteams {
   background-color: #333333;
   Color: #FF8600;
   font-size: x-large;
 }
 
-.mat-tab-group {
-  margin-bottom: 48px;
-}
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  background-color: #dab993;
-  padding-left: 10px;
-  width: 90%;
+  background-color: #202020;
 }
 
-table{
+table {
   width: 70%;
 }
 
 .card:hover {
-  box-shadow: 0 16px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.container {
-  padding: 2px 16px;
-}
 
-.navbar{
-  background-color: #333333;
-}
-
-.example-margin {
-  margin: 0 12px;
-}
-th, td {
-  padding-top: 10px;
+td, th{
+  padding-top: 9px;
   padding-bottom: 20px;
   padding-left: 30px;
   padding-right: 20px;
+}
+
+.lineborder {
+  border: 3px solid;
+  border-color: lightgrey;
+}
+
+#linechart_tournament {
+  background-color: #333333;
+}
+
+#teams {
+  border: 5px solid;
+  margin: auto;
+  width: 100%;
+  left: 1%;
+}
+
+#earnings {
+  top: 50%;
+  left: 50%;
+}
+
+#earning > table {
+  width: 70%;
+  align-content: center;
 }

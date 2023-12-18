@@ -31,7 +31,7 @@ export class ShooterSprachenComponent implements OnInit {
   }
 
   createChart(): void {
-    this.ctx = document.getElementById('myChart1');
+    this.ctx = document.getElementById('shooter-chart');
     this.config = {
       type: 'bar',
       data: {

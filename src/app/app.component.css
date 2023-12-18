@@ -1,5 +1,21 @@
 .container-fluid {
-    padding: 10px 16px;
-    background: #555;
-    color: #f1f1f1;
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+body {
+  background: #191919;
+}
+
+a {
+  color:#ff3e00;
+}
+
+a:hover {
+  background-color: #cc3200; /* A darker shade of orange for hover effect */
+}
+
+#container {
+  margin-bottom: 0;
 }

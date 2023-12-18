@@ -30,7 +30,7 @@ export class BrSprachenComponent implements OnInit {
   }
 
   createChart(): void {
-    this.ctx = document.getElementById('myChart1');
+    this.ctx = document.getElementById('br-chart');
     this.config = {
       type: 'bar',
       data: {

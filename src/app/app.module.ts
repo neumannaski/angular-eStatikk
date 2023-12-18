@@ -7,7 +7,6 @@ import {ChartDemoComponent} from './chart-demo/chart-demo.component';
 
 import {Chart} from 'chart.js';
 import {registerables} from 'chart.js';
-import {MultiBarColumnComponent} from './multi-bar-column/multi-bar-column.component';
 import {StreamsDataComponent} from './streams-data/streams-data.component';
 import {HttpClientModule} from '@angular/common/http';
 import {PieChartComponent} from './pie-chart/pie-chart.component';
@@ -29,6 +28,7 @@ import {ShooterSprachenComponent} from './shooter/shooter-sprachen/shooter-sprac
 import {LpTournamentComponent} from './lp/lp-tournament/lp-tournament.component';
 import { LocalstorageComponent } from './app/lp/localstorage/localstorage.component';
 import { AvgtwitchdataComponent } from './lp/avgtwitchdata/avgtwitchdata.component';
+import { TwitchComponent } from './twitch/twitch.component';
 
 
 Chart.register(...registerables);
@@ -53,8 +53,7 @@ Chart.register(...registerables);
     LpTournamentComponent,
     LocalstorageComponent,
     AvgtwitchdataComponent,
-
-
+    TwitchComponent,
   ],
   imports: [
     BrowserModule,
