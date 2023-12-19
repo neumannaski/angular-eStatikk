@@ -185,7 +185,7 @@ export class LpTournamentComponent implements OnInit {
         if(tabledataset.game_name==game.name){
           gamedata.push(tabledataset.prizepool);
             
-          gamecolor.push("darkgreen")
+          gamecolor.push("orange")
             
         }else{
 
