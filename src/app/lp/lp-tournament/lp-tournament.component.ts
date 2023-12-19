@@ -155,11 +155,7 @@ export class LpTournamentComponent implements OnInit {
         for (const tabledataset of this.tournament_tabletimedata) {
           if(tabledataset.game_name==game.name){
             gamedata.push(tabledataset.prizepool);
-              if(game.name=='Dota 2'){
-                gamecolor ="rgb(255,92,92)"
-              }else if (game.name=='League of Legends'){
-                gamecolor="rgb(92,92,255)"
-              }
+              gamecolor=this.localStorageService.getgamecolor(game.name)
           }else{
             gamedata.push(NaN);
           }
@@ -188,30 +184,16 @@ export class LpTournamentComponent implements OnInit {
       for (const tabledataset of this.tabledata) {
         if(tabledataset.game_name==game.name){
           gamedata.push(tabledataset.prizepool);
-            if(index==0){
-              first_gamename=game.name
-            }
-            if(game.name=='Dota 2'){
-              gamecolor.push("rgb(255,92,92)")
-            }else if (game.name=='League of Legends'){
-              gamecolor.push("rgb(92,92,255)")
-            }
+            
+          gamecolor.push("darkgreen")
+            
         }else{
 
         }
       }
-      if(index>=1){
-        if(this.checkforgame(game.name)){
-          gamedatasets.push({
-            label:game.name,
-            backgroundColor: ["rgb(92,92,255)"]
-         })
-        }
-      }
-      index+=1;
     }
     gamedatasets.push({
-      label: first_gamename, 
+      label: 'Preisgeld in $', 
       data: gamedata,
       backgroundColor: gamecolor
   })
@@ -222,12 +204,14 @@ export class LpTournamentComponent implements OnInit {
     const url = `http://127.0.0.1:5000/get_lp_tournament_prizepool`;
     var gamedata: any[]=[];
     var gamelabel: any[]=[];
+    var gamecolor: any[]=[];
     this.httpClient.get<any>(url).subscribe(
       response => {
         for (const res of response) {
           if(this.checkforgame(res.game_name)){
             gamedata.push(res.prizepool)
             gamelabel.push(res.game_name)
+            gamecolor.push(this.localStorageService.getgamecolor(res.game_name));
           }
           
         }
@@ -239,7 +223,7 @@ export class LpTournamentComponent implements OnInit {
             datasets: [{
               label: 'Anzahl der Zuschauer',
               data: gamedata,
-              backgroundColor: ['rgb(255,92,92)','rgb(92,92,255)'],
+              backgroundColor: gamecolor,
               hoverOffset: 4
             }]
           },

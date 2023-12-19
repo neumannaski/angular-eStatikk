@@ -19,12 +19,12 @@ export class LocalstorageComponent {
     name: "Overwatch 2",
     img: "assets\\source\\icons\\icons8-overwatch-48.png",
     selected: false,
-    color: "rgb(92,92,255)"
+    color: "yellow"
   }, {
     name: "Counter-Strike",
     img: "assets\\source\\icons\\icons8-gegenschlag-48.png",
     selected: false,
-    color: "rgb(92,92,255)"
+    color: "blue"
   }, {
     name: "PUBG",
     img: "assets\\source\\icons\\icons8-pubg-48.png",
@@ -68,7 +68,7 @@ export class LocalstorageComponent {
         return game.color;
       }
     }
-    return '';
+    return this.generateRandomColor();
   }
 
   getimageofgame(gamen: string): string {
@@ -134,7 +134,23 @@ export class LocalstorageComponent {
         return 'yellow';
       case 'T1':
         return 'red';
+        default:
+          return this.generateRandomColor();
     }
     return 'rgb(255,92,92)';
   }
+
+  generateRandomColor(): string {
+    
+    var hexChars: string = "0123456789ABCDEF";
+  
+    // Zufällige Farbe generieren
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += hexChars[Math.floor(Math.random() * 16)];
+    }
+  
+    return color;
+  }
+  
 }
